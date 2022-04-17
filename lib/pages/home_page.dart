@@ -21,7 +21,9 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  // name
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -42,9 +44,20 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ],
                   ),
+
+                  // profile picture
+                  Container(
+                    padding: EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.deepPurple[100],
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    child: Icon(Icons.person),
+                  ),
                 ],
               ),
             )
+
             // card -> How do you feel about it?
 
             // search bar
