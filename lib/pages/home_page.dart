@@ -125,6 +125,23 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 25),
 
             // search bar
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Container(
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.deepPurple[100],
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: TextField(
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.search),
+                    border: InputBorder.none,
+                    hintText: 'How can we help?',
+                  ),
+                ),
+              ),
+            ),
 
             // horizontal listview -> categories
 
