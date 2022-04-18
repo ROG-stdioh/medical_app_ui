@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:medica_app_ui/util/category_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -143,7 +144,31 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
 
+            SizedBox(height: 25),
+
             // horizontal listview -> categories
+            Container(
+              height: 80,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  CategoryCard(
+                    categoryName: 'Dentist',
+                    iconImagePath: 'lib/icons/tooth.png',
+                  ),
+                  CategoryCard(
+                    categoryName: 'Surgeon',
+                    iconImagePath: 'lib/icons/surgeon.png',
+                  ),
+                  CategoryCard(
+                    categoryName: 'Pharmacist',
+                    iconImagePath: 'lib/icons/medicine.png',
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 25),
 
             // doctor list
           ],
