@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:medica_app_ui/util/category_card.dart';
+import 'package:medica_app_ui/util/doctor_card.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -77,7 +79,8 @@ class _HomePageState extends State<HomePage> {
                       Container(
                         height: 100,
                         width: 100,
-                        color: Colors.deepPurple[200],
+                        child: Lottie.network(
+                            'https://assets3.lottiefiles.com/packages/lf20_go0wc4l3.json'),
                       ),
                       SizedBox(
                         width: 20,
@@ -171,6 +174,57 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 25),
 
             // doctor list
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Doctor List',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
+                  Text(
+                    'See all',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey[500],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            SizedBox(height: 25),
+
+            Expanded(
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: [
+                  DoctorCard(
+                    doctorImagePath: 'lib/images/doctor1.jpg',
+                    rating: '4.9',
+                    doctorName: 'Dr. Sandra Merrilyn',
+                    doctorProfession: 'Therapist',
+                  ),
+                  DoctorCard(
+                    doctorImagePath: 'lib/images/doctor2.jpg',
+                    rating: '4.4',
+                    doctorName: 'Dr. Jerrard Williamson',
+                    doctorProfession: 'Surgeon',
+                  ),
+                  DoctorCard(
+                    doctorImagePath: 'lib/images/doctor3.jpg',
+                    rating: '4.5',
+                    doctorName: 'Dr. Daley Catherina',
+                    doctorProfession: 'Dentisit',
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
